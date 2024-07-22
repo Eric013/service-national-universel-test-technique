@@ -1,4 +1,4 @@
-# Technical test
+# Technical test Eric Sanchez
 
 ## Introduction
 
@@ -24,7 +24,7 @@ Then, see what happens in the app and fix any bugs you find during this process.
 Send us the project and answer the following questions :
 
 - What bugs did you find ? How did you solve them and why ?
-    - See [me report](https://github.com/Eric013/service-national-universel-test-technique/cr_erics.md)
+    - See [me report](https://github.com/Eric013/service-national-universel-test-technique/blob/main/cr_erics.md)
 - Do you have any feedback about the code / architecture of the project?
 
   The project's code certainly meets the functional requirements, however, there are important points of improvement that need to be added and corrected:
