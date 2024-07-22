@@ -46,7 +46,7 @@ router.get("/:id", passport.authenticate("user", { session: false }), async (req
 router.post("/", passport.authenticate("user", { session: false }), async (req, res) => {
   try {
     if (!validatePassword(req.body.password)) return res.status(400).send({ ok: false, user: null, code: PASSWORD_NOT_VALIDATED });
-    if (!validateEmail(req.body.email)) return res.status(400).send({ ok: false, user: null, code: EMAIL_NOT_VALIDATED });
+    if (req.body.email && !validateEmail(req.body.email)) return res.status(400).send({ ok: false, user: null, code: EMAIL_NOT_VALIDATED });
 
     const existingUser = await UserModel.findOne({
       $or: [{ username: req.body.username }, { email: req.body.email }]

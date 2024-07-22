@@ -6,7 +6,7 @@ const MODELNAME = "user";
 const schema = new Schema({
   name: { type: String, trim: true, unique: true, required: true },
 
-  email: { type: String, trim: true, unique: true, required: true },
+  email: { type: String, trim: true, unique: true },
 
   avatar: { type: String, default: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" },
   banner: { type: String, default: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" },
