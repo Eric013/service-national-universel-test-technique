@@ -49,7 +49,7 @@ router.post("/", passport.authenticate("user", { session: false }), async (req, 
     if (req.body.email && !validateEmail(req.body.email)) return res.status(400).send({ ok: false, user: null, code: EMAIL_NOT_VALIDATED });
 
     const existingUser = await UserModel.findOne({
-      $or: [{ username: req.body.username }, { email: req.body.email }]
+      $or: [{ name: req.body.name }, { email: req.body.email }],
     });
 
     if (existingUser) {
