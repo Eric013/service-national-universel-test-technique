@@ -24,8 +24,19 @@ Then, see what happens in the app and fix any bugs you find during this process.
 Send us the project and answer the following questions :
 
 - What bugs did you find ? How did you solve them and why ?
+    - See [me report](https://github.com/Eric013/service-national-universel-test-technique/cr_erics.md)
 - Do you have any feedback about the code / architecture of the project?
+
+  The project's code certainly meets the functional requirements, however, there are important points of improvement that need to be added and corrected:
+
+    - Input Validation: It would be beneficial to add systematic input validation both on the front-end and back-end to enhance robustness and security.
+    - Error Handling: Improve error handling to provide more detailed and specific error messages, especially in cases of data duplication.
+    - Unit Testing: Add unit and integration tests for critical components to ensure the stability and reliability of the code.
+    - File Organization: Better organization of files, such as clearly separating components, services, and models, would facilitate maintenance and scalability of the project.
+    - Adherence to the Single Responsibility Principle (SRP): To improve the architecture, it would be advisable to refactor components and services to adhere to the Single Responsibility Principle of the SOLID principles. Each module or component should have a single, clearly defined responsibility, making the code more modular and easier to maintain.
+
 - What difficulties did you encounter while working on it ?
+  - I haven't necessarily encountered any difficulties, just the numerous eslint errors, nested parts of code, duplicate checks, etc.
 
 We look forward to your submission and appreciate your effort!
 

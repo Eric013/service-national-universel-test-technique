@@ -5,6 +5,12 @@ function validatePassword(password) {
   return !error;
 }
 
+function validateEmail(email) {
+  const { error } = Joi.string().required().email().validate(email);
+  return !error;
+}
+
 module.exports = {
   validatePassword,
+  validateEmail,
 };

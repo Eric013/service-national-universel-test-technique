@@ -1,8 +1,8 @@
 import { Field, Formik } from "formik";
-import React from "react";
+import React, { useCallback } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import validator from "validator";
 
 import { setUser } from "../../redux/auth/actions";
@@ -13,6 +13,12 @@ import api from "../../services/api";
 export default () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.Auth.user);
+
+  const handleValidationPassword = useCallback((v) => {
+    if (validator.isEmpty(v)) return "This field is Required";
+    else if (v.length < 6) return "Password must be at least 6 characters long";
+    else if (v.length > 100) return "Password must be at most 100 characters long";
+  }, []);
 
   return (
     // Auth Wrapper
@@ -76,7 +82,7 @@ export default () => {
                 <div className="flex flex-col-reverse">
                   <Field
                     className="peer signInInputs"
-                    validate={(v) => validator.isEmpty(v) && "This field is Required"}
+                    validate={(v) => handleValidationPassword(v)}
                     name="password"
                     type="password"
                     id="password"
